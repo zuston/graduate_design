@@ -1,8 +1,8 @@
 <?php
 require './extension/xunsearch/lib/XS.php';
-$xs = new XS('demo');
-$doc = $xs->search->search('项目');
-print_r($doc);exit;
+// $xs = new XS('demo');
+// $doc = $xs->search->search('项目');
+// print_r($doc);exit;
 require './extension/flight/flight/Flight.php';
 require './extension/activerecord/ActiveRecord.php';
 require './model/adminModel.php';
@@ -20,16 +20,19 @@ require './Core/ErrorMap.php';
 require './service/userService.php';
 
 //require_once './core/AutoLoad.php';
+require './data_book_export_1.php';
+require './data_book_export_2.php';
+
 
 ActiveRecord::setDb(new PDO("mysql:host=localhost;dbname=bookManage","root","shacha"));
 
-Flight::route('/*',function(){
-     if(Core::getSessionState()){
-         return true;
-     }else{
-         Core::render('login');
-     }
-});
+// Flight::route('/*',function(){
+//      if(Core::getSessionState()){
+//          return true;
+//      }else{
+//          Core::render('login');
+//      }
+// });
 
 Flight::route('/login/@verify',function($verify){
     if(Core::getSessionState()){
@@ -46,6 +49,12 @@ Flight::route('/login/*', function(){
 //        Core::render('error',['errorMsg'=>$msg]);
 //    }
 });
+
+Flight::route('/api/import',function(){
+    var_dump(import_1());
+});
+
+
 
 Flight::start();
 
