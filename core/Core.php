@@ -89,6 +89,9 @@ class Core
     }
 
     public static function getSessionState(){
+        if(empty($_SESSION['state'])){
+            return false;
+        }
         return ($_SESSION['state'])?true:false;
     }
 

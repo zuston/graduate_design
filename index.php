@@ -1,8 +1,8 @@
 <?php
 require './extension/xunsearch/lib/XS.php';
- $xs = new XS('demo');
- $doc = $xs->search->search('项目');
- print_r($doc);exit;
+// $xs = new XS('demo');
+// $doc = $xs->search->search('项目');
+// print_r($doc);exit;
 require './extension/Flight/flight/Flight.php';
 require './extension/ActiveRecord/ActiveRecord.php';
 require './model/adminModel.php';
@@ -14,22 +14,19 @@ require './model/userBookRelationModel.php';
 require './model/userLoginLogModel.php';
 require './model/userStateLogModel.php';
 
-require './Core/Core.php';
-require './Core/ErrorMap.php';
+require './core/Core.php';
+require './core/ErrorMap.php';
 
 require './service/userService.php';
-
 //require_once './core/AutoLoad.php';
-
 ActiveRecord::setDb(new PDO("mysql:host=localhost;dbname=bookManage","root","shacha"));
-
-// Flight::route('/*',function(){
-//      if(Core::getSessionState()){
-//          return true;
-//      }else{
-//          Core::render('login');
-//      }
-// });
+ Flight::route('/*',function(){
+      if(Core::getSessionState()){
+          return true;
+      }else{
+          echo 222222;
+      }
+ });
 
 Flight::route('/login/@verify',function($verify){
     if(Core::getSessionState()){
