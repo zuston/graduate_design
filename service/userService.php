@@ -8,13 +8,22 @@
  */
 class userService
 {
-    public static function user_info_show($user_id){
-        $user = new userModel();
-        return $user->eq('user_id',$user_id)->find();
-    }
-
     public static function getAllBook(){
         $bookModels = new bookModel();
         return $bookModels->findAll();
+    }
+
+    public static function verifyLogin($username,$password){
+        $userModel = new userModel();
+        $userModel = $userModel->eq('user_id',$username)->find();
+        if($userModel==null){
+            return false;
+        }
+
+        if($userModel->user_password==$password){
+            Core::loginSessionState();
+            return $userModel;
+        }
+        return false;
     }
 }

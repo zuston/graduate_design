@@ -1,10 +1,9 @@
 <?php
+session_start();
 require './extension/xunsearch/lib/XS.php';
-// $xs = new XS('demo');
-// $doc = $xs->search->search('项目');
-// print_r($doc);exit;
 require './extension/Flight/flight/Flight.php';
 require './extension/ActiveRecord/ActiveRecord.php';
+
 require './model/adminModel.php';
 require './model/adminBookLogModel.php';
 require './model/adminLoginLogModel.php';
@@ -18,30 +17,41 @@ require './core/Core.php';
 require './core/ErrorMap.php';
 
 require './service/userService.php';
-//require_once './core/AutoLoad.php';
-ActiveRecord::setDb(new PDO("mysql:host=localhost;dbname=bookManage","root","shacha"));
- Flight::route('/user/login',function(){
-      if(Core::getSessionState()){
-          return true;
-      }else{
-          return true;
-      }
- });
+require './service/adminService.php';
+require './service/loginService.php';
 
-Flight::route('/login/@verify',function($verify){
+//require_once './core/AutoLoad.php';
+
+ActiveRecord::setDb(new PDO("mysql:host=localhost;dbname=bookManage","root","shacha"));
+
+/**
+ * 登录状态监测
+ */
+Flight::route('/main/*',function(){
+    var_dump(Core::getSessionState());exit;
     if(Core::getSessionState()){
         return true;
+    }else{
+        Core::render('login');
     }
 });
 
-Flight::route('/login/*', function(){
-    $userModel = userService::user_info_show(1);
-//    $flag = Core::render('login',$userModel);
-    $flag = Core::renderAll('left',array('all'=>1),'login',$userModel);
-//    if($flag!=ErrorMap::SUCCESS){
-//        $msg = ErrorMap::$error_map_msg[$flag];
-//        Core::render('error',['errorMsg'=>$msg]);
-//    }
+/**
+ * 登录功能
+ */
+Flight::route('/login/user', function(){
+    $username = Core::r('username');
+    $password = Core::r('password');
+    $keeplogin = Core::r('keeplogin');
+    if(!isset($username)||!isset($password)){
+        Flight::redirect('/main');
+    }
+    $userModel = userService::verifyLogin($username,$password);
+    if(is_object($userModel)){
+        Flight::redirect('/main/user/userinfo');
+    }else{
+        Flight::redirect('/main');
+    }
 });
 
 Flight::route('/api/import',function(){
@@ -61,6 +71,10 @@ Flight::route('/api/import',function(){
         $index -> add($doc);
     }
     echo 2222;exit;
+});
+
+Flight::route('/main/user/userinfo',function(){
+   Core::render('main');
 });
 
 Flight::route('/api/search/',function(){
