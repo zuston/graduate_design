@@ -73,6 +73,21 @@ class Core
         return ErrorMap::SUCCESS;
     }
 
+    public static function r($key){
+        if(!empty($_REQUEST[$key])){
+            return $_REQUEST[$key];
+        }
+        return false;
+    }
+
+    public static function setSessionState($key){
+        $_SESSION['state'] = $key;
+    }
+
+    public static function getSessionState(){
+        return $_SESSION['state'];
+    }
+
 }
 
 

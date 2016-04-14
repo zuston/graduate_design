@@ -19,8 +19,12 @@ require './service/userService.php';
 
 ActiveRecord::setDb(new PDO("mysql:host=localhost;dbname=bookManage","root","shacha"));
 
+Flight::route('/*',function(){
+	 return true;
+});
+
 Flight::route('/login/@verify',function($verify){
-    if($verify==1){
+    if(Core::getSessionState()){
         return true;
     }
 });
