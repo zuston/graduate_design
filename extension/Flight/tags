@@ -1,0 +1,527 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AutoloadTest	tests/AutoloadTest.php	/^class AutoloadTest extends PHPUnit_Framework_TestCase$/;"	c
+Collection	flight/util/Collection.php	/^class Collection implements \\ArrayAccess, \\Iterator, \\Countable {$/;"	c
+Dispatcher	flight/core/Dispatcher.php	/^class Dispatcher {$/;"	c
+DispatcherTest	tests/DispatcherTest.php	/^class DispatcherTest extends PHPUnit_Framework_TestCase$/;"	c
+Engine	flight/Engine.php	/^class Engine {$/;"	c
+Factory	tests/classes/Factory.php	/^class Factory {$/;"	c
+FilterTest	tests/FilterTest.php	/^class FilterTest extends PHPUnit_Framework_TestCase$/;"	c
+Flight	flight/Flight.php	/^class Flight {$/;"	c
+FlightTest	tests/FlightTest.php	/^class FlightTest extends PHPUnit_Framework_TestCase$/;"	c
+Hello	tests/classes/Hello.php	/^class Hello {$/;"	c
+Loader	flight/core/Loader.php	/^class Loader {$/;"	c
+LoaderTest	tests/LoaderTest.php	/^class LoaderTest extends PHPUnit_Framework_TestCase$/;"	c
+MapTest	tests/MapTest.php	/^class MapTest extends PHPUnit_Framework_TestCase$/;"	c
+RedirectTest	tests/RedirectTest.php	/^class RedirectTest extends PHPUnit_Framework_TestCase$/;"	c
+RegisterTest	tests/RegisterTest.php	/^class RegisterTest extends PHPUnit_Framework_TestCase$/;"	c
+RenderTest	tests/RenderTest.php	/^class RenderTest extends PHPUnit_Framework_TestCase$/;"	c
+Request	flight/net/Request.php	/^class Request {$/;"	c
+RequestTest	tests/RequestTest.php	/^class RequestTest extends PHPUnit_Framework_TestCase$/;"	c
+Response	flight/net/Response.php	/^class Response {$/;"	c
+Route	flight/net/Route.php	/^class Route {$/;"	c
+Router	flight/net/Router.php	/^class Router {$/;"	c
+RouterTest	tests/RouterTest.php	/^class RouterTest extends PHPUnit_Framework_TestCase$/;"	c
+User	tests/classes/User.php	/^    public function User($name = ''){$/;"	f
+User	tests/classes/User.php	/^class User {$/;"	c
+VariableTest	tests/VariableTest.php	/^class VariableTest extends PHPUnit_Framework_TestCase$/;"	c
+View	flight/template/View.php	/^class View {$/;"	c
+ViewTest	tests/ViewTest.php	/^class ViewTest extends PHPUnit_Framework_TestCase$/;"	c
+__call	flight/Engine.php	/^    public function __call($name, $params) {$/;"	f
+__callStatic	flight/Flight.php	/^    public static function __callStatic($name, $params) {$/;"	f
+__clone	flight/Flight.php	/^    private function __clone() {}$/;"	f
+__construct	flight/Engine.php	/^    public function __construct() {$/;"	f
+__construct	flight/Flight.php	/^    private function __construct() {}$/;"	f
+__construct	flight/net/Request.php	/^    public function __construct($config = array()) {$/;"	f
+__construct	flight/net/Route.php	/^    public function __construct($pattern, $callback, $methods, $pass) {$/;"	f
+__construct	flight/template/View.php	/^    public function __construct($path = '.') {$/;"	f
+__construct	flight/util/Collection.php	/^    public function __construct(array $data = array()) {$/;"	f
+__construct	tests/classes/Factory.php	/^    private function __construct() {$/;"	f
+__destruct	flight/Flight.php	/^    private function __destruct() {}$/;"	f
+__get	flight/util/Collection.php	/^    public function __get($key) {$/;"	f
+__isset	flight/util/Collection.php	/^    public function __isset($key) {$/;"	f
+__set	flight/util/Collection.php	/^    public function __set($key, $value) {$/;"	f
+__unset	flight/util/Collection.php	/^    public function __unset($key) {$/;"	f
+_error	flight/Engine.php	/^    public function _error(\\Exception $e) {$/;"	f
+_etag	flight/Engine.php	/^    public function _etag($id, $type = 'strong') {$/;"	f
+_halt	flight/Engine.php	/^    public function _halt($code = 200, $message = '') {$/;"	f
+_json	flight/Engine.php	/^    public function _json($data, $code = 200, $encode = true, $charset = 'utf-8') {$/;"	f
+_jsonp	flight/Engine.php	/^    public function _jsonp($data, $param = 'jsonp', $code = 200, $encode = true, $charset = 'utf-8') {$/;"	f
+_lastModified	flight/Engine.php	/^    public function _lastModified($time) {$/;"	f
+_notFound	flight/Engine.php	/^    public function _notFound() {$/;"	f
+_redirect	flight/Engine.php	/^    public function _redirect($url, $code = 303) {$/;"	f
+_render	flight/Engine.php	/^    public function _render($file, $data = null, $key = null) {$/;"	f
+_route	flight/Engine.php	/^    public function _route($pattern, $callback, $pass_route = false) {$/;"	f
+_start	flight/Engine.php	/^    public function _start() {$/;"	f
+_stop	flight/Engine.php	/^    public function _stop($code = 200) {$/;"	f
+accept	flight/net/Request.php	/^    public $accept;$/;"	v
+addDirectory	flight/core/Loader.php	/^    public static function addDirectory($dir) {$/;"	f
+after	flight/Engine.php	/^    public function after($name, $callback) {$/;"	f
+ajax	flight/net/Request.php	/^    public $ajax;$/;"	v
+allows	flight/util/Collection.php	/^ * The Collection class allows you to access a set of data$/;"	c
+app	flight/Flight.php	/^        $app = Flight::app();$/;"	v
+app	flight/Flight.php	/^    public static function app() {$/;"	f
+app	tests/AutoloadTest.php	/^        $this->app = new \\flight\\Engine();$/;"	v
+app	tests/AutoloadTest.php	/^    private $app;$/;"	v
+app	tests/FilterTest.php	/^        $this->app = new \\flight\\Engine();$/;"	v
+app	tests/FilterTest.php	/^    private $app;$/;"	v
+app	tests/MapTest.php	/^        $this->app = new \\flight\\Engine();$/;"	v
+app	tests/MapTest.php	/^    private $app;$/;"	v
+app	tests/RedirectTest.php	/^        $this->app = new \\flight\\Engine();$/;"	v
+app	tests/RedirectTest.php	/^    private $app;$/;"	v
+app	tests/RegisterTest.php	/^        $this->app = new \\flight\\Engine();$/;"	v
+app	tests/RegisterTest.php	/^    private $app;$/;"	v
+app	tests/RenderTest.php	/^        $this->app = new \\flight\\Engine();$/;"	v
+app	tests/RenderTest.php	/^    private $app;$/;"	v
+app	tests/VariableTest.php	/^        $this->app = new \\flight\\Engine();$/;"	v
+app	tests/VariableTest.php	/^    private $app;$/;"	v
+args	flight/core/Dispatcher.php	/^        $args = array(&$params, &$output);$/;"	v
+args	flight/net/Request.php	/^        $args = parse_url($url);$/;"	v
+autoload	flight/core/Loader.php	/^    public static function autoload($enabled = true, $dirs = array()) {$/;"	f
+autoloading	flight/Engine.php	/^     * Adds a path for class autoloading.$/;"	c
+autoloading	flight/core/Loader.php	/^ * class autoloading.$/;"	c
+base	flight/Engine.php	/^            $base = $this->request()->base;$/;"	v
+base	flight/Engine.php	/^        $base = $this->get('flight.base_url');$/;"	v
+base	flight/net/Request.php	/^    public $base;$/;"	v
+base	tests/RedirectTest.php	/^            $base = $this->app->get('flight.base_url');$/;"	v
+base	tests/RedirectTest.php	/^            $base = $this->app->request()->base;$/;"	v
+base	tests/RedirectTest.php	/^        $base = $this->app->request()->base;$/;"	v
+before	flight/Engine.php	/^    public function before($name, $callback) {$/;"	f
+body	flight/net/Request.php	/^            $body = $this->getBody();$/;"	v
+body	flight/net/Request.php	/^            $body = file_get_contents('php:\/\/input');$/;"	v
+body	flight/net/Request.php	/^        static $body;$/;"	v
+body	flight/net/Response.php	/^        $this->body = '';$/;"	v
+body	flight/net/Response.php	/^    protected $body;$/;"	v
+cache	flight/net/Response.php	/^    public function cache($expires) {$/;"	f
+callFunction	flight/core/Dispatcher.php	/^    public static function callFunction($func, array &$params = array()) {$/;"	f
+callback	flight/Engine.php	/^        $callback = $this->dispatcher->get($name);$/;"	v
+callback	flight/Engine.php	/^        $callback = $this->request()->query[$param];$/;"	v
+callback	flight/net/Route.php	/^        $this->callback = $callback;$/;"	v
+callback	flight/net/Route.php	/^    public $callback;$/;"	v
+case_sensitive	flight/net/Route.php	/^    public function matchUrl($url, $case_sensitive = false) {$/;"	v
+case_sensitive	flight/net/Router.php	/^    public $case_sensitive = false;$/;"	v
+check	tests/RouterTest.php	/^    function check($str = '') {$/;"	f
+class_file	flight/core/Loader.php	/^        $class_file = str_replace(array('\\\\', '_'), '\/', $class).'.php';$/;"	v
+classes	flight/core/Loader.php	/^        $this->classes = array();$/;"	v
+classes	flight/core/Loader.php	/^    protected $classes = array();$/;"	v
+clear	flight/Engine.php	/^    public function clear($key = null) {$/;"	f
+clear	flight/core/Dispatcher.php	/^    public function clear($name = null) {$/;"	f
+clear	flight/net/Response.php	/^    public function clear() {$/;"	f
+clear	flight/net/Router.php	/^    public function clear() {$/;"	f
+clear	flight/template/View.php	/^    public function clear($key = null) {$/;"	f
+clear	flight/util/Collection.php	/^    public function clear() {$/;"	f
+code	flight/Engine.php	/^    public function _json($data, $code = 200, $encode = true, $charset = 'utf-8') {$/;"	v
+code	flight/Engine.php	/^    public function _redirect($url, $code = 303) {$/;"	v
+code	flight/Flight.php	/^ * @method  static void json($data, $code = 200, $encode = true) Sends a JSON response.$/;"	v
+code	flight/Flight.php	/^ * @method  static void redirect($url, $code = 303) Redirects to another URL.$/;"	v
+codes	flight/net/Response.php	/^    public static $codes = array($/;"	v
+config	flight/net/Request.php	/^            $config = array($/;"	v
+contains	flight/Engine.php	/^ * The Engine class contains the core functionality of the framework.$/;"	c
+continue	flight/Engine.php	/^            $continue = $this->dispatcher->execute($/;"	v
+continue	flight/core/Dispatcher.php	/^            $continue = $this->execute($callback, $args);$/;"	v
+continue	tests/RouterTest.php	/^            $continue = $this->dispatcher->execute($/;"	v
+cookies	flight/net/Request.php	/^    public $cookies;$/;"	v
+count	flight/net/Route.php	/^            $count = substr_count($this->pattern, '\/');$/;"	v
+count	flight/util/Collection.php	/^    public function count() {$/;"	f
+create	tests/classes/Factory.php	/^    public static function create() {$/;"	f
+current	flight/net/Router.php	/^    public function current() {$/;"	f
+current	flight/util/Collection.php	/^    public function current() {$/;"	f
+data	flight/Engine.php	/^    public function _render($file, $data = null, $key = null) {$/;"	v
+data	flight/Flight.php	/^ * @method  static void render($file, array $data = null, $key = null) Renders a template file.$/;"	v
+data	flight/net/Request.php	/^                $data = json_decode($body, true);$/;"	v
+data	flight/net/Request.php	/^    public $data;$/;"	v
+data	flight/template/View.php	/^    public function fetch($file, $data = null) {$/;"	v
+data	flight/template/View.php	/^    public function render($file, $data = null) {$/;"	v
+data	flight/util/Collection.php	/^        $this->data = $data;$/;"	v
+data	flight/util/Collection.php	/^        $this->data = array();$/;"	v
+data	flight/util/Collection.php	/^    private $data;$/;"	v
+data	flight/util/Collection.php	/^    public function __construct(array $data = array()) {$/;"	v
+default	flight/net/Request.php	/^    public static function getVar($var, $default = '') {$/;"	v
+dirs	flight/core/Loader.php	/^    protected static $dirs = array();$/;"	v
+dirs	flight/core/Loader.php	/^    public static function autoload($enabled = true, $dirs = array()) {$/;"	v
+dispatched	flight/Engine.php	/^            $dispatched = false;$/;"	v
+dispatched	flight/Engine.php	/^            $dispatched = true;$/;"	v
+dispatched	flight/Engine.php	/^        $dispatched = false;$/;"	v
+dispatched	tests/RouterTest.php	/^            $dispatched = false;$/;"	v
+dispatched	tests/RouterTest.php	/^            $dispatched = true;$/;"	v
+dispatched	tests/RouterTest.php	/^        $dispatched = false;$/;"	v
+dispatcher	flight/Engine.php	/^        $this->dispatcher = new Dispatcher();$/;"	v
+dispatcher	flight/Engine.php	/^    protected $dispatcher;$/;"	v
+dispatcher	tests/DispatcherTest.php	/^        $this->dispatcher = new \\flight\\core\\Dispatcher();$/;"	v
+dispatcher	tests/DispatcherTest.php	/^    private $dispatcher;$/;"	v
+dispatcher	tests/RouterTest.php	/^        $this->dispatcher = new \\flight\\core\\Dispatcher();$/;"	v
+e	flight/template/View.php	/^    public function e($str) {$/;"	f
+engine	flight/Flight.php	/^    private static $engine;$/;"	v
+events	flight/core/Dispatcher.php	/^            $this->events = array();$/;"	v
+events	flight/core/Dispatcher.php	/^        $this->events = array();$/;"	v
+events	flight/core/Dispatcher.php	/^    protected $events = array();$/;"	v
+execute	flight/core/Dispatcher.php	/^    public static function execute($callback, array &$params = array()) {$/;"	f
+exists	flight/core/Loader.php	/^            $exists = isset($this->instances[$name]);$/;"	v
+exists	flight/template/View.php	/^    public function exists($file) {$/;"	f
+expires	flight/net/Response.php	/^            $expires = is_int($expires) ? $expires : strtotime($expires);$/;"	v
+ext	flight/template/View.php	/^        $ext = $this->extension;$/;"	v
+extension	flight/template/View.php	/^    public $extension = '.php';$/;"	v
+fetch	flight/template/View.php	/^    public function fetch($file, $data = null) {$/;"	f
+field	flight/net/Response.php	/^        foreach ($this->headers as $field => $value) {$/;"	v
+file	flight/core/Loader.php	/^            $file = $dir.'\/'.$class_file;$/;"	v
+files	flight/net/Request.php	/^    public $files;$/;"	v
+filter	flight/core/Dispatcher.php	/^    public function filter($filters, &$params, &$output) {$/;"	f
+filters	flight/core/Dispatcher.php	/^            $this->filters = array();$/;"	v
+filters	flight/core/Dispatcher.php	/^        $this->filters = array();$/;"	v
+filters	flight/core/Dispatcher.php	/^    protected $filters = array();$/;"	v
+flags	flight/net/Request.php	/^        $flags = \\FILTER_FLAG_NO_PRIV_RANGE | \\FILTER_FLAG_NO_RES_RANGE;$/;"	v
+forwarded	flight/net/Request.php	/^        static $forwarded = array($/;"	v
+get	flight/Engine.php	/^    public function get($key = null) {$/;"	f
+get	flight/core/Dispatcher.php	/^    public function get($name) {$/;"	f
+get	flight/template/View.php	/^    public function get($key) {$/;"	f
+getBaseUrl	tests/RedirectTest.php	/^    function getBaseUrl($base, $url){$/;"	f
+getBody	flight/net/Request.php	/^    public static function getBody() {$/;"	f
+getData	flight/util/Collection.php	/^    public function getData() {$/;"	f
+getInstance	flight/core/Loader.php	/^    public function getInstance($name) {$/;"	f
+getMethod	flight/net/Request.php	/^    public static function getMethod() {$/;"	f
+getProxyIpAddress	flight/net/Request.php	/^    public static function getProxyIpAddress() {$/;"	f
+getRoutes	flight/net/Router.php	/^    public function getRoutes() {$/;"	f
+getTemplate	flight/template/View.php	/^    public function getTemplate($file) {$/;"	f
+getVar	flight/net/Request.php	/^    public static function getVar($var, $default = '') {$/;"	f
+h	tests/DispatcherTest.php	/^        $h = new Hello();$/;"	v
+h	tests/MapTest.php	/^        $h = new Hello();$/;"	v
+handleError	flight/Engine.php	/^    public function handleError($errno, $errstr, $errfile, $errline) {$/;"	f
+handleErrors	flight/Engine.php	/^    public function handleErrors($enabled)$/;"	f
+handleException	flight/Engine.php	/^    public function handleException(\\Exception $e) {$/;"	f
+has	flight/Engine.php	/^    public function has($key) {$/;"	f
+has	flight/core/Dispatcher.php	/^    public function has($name) {$/;"	f
+has	flight/template/View.php	/^    public function has($key) {$/;"	f
+header	flight/net/Response.php	/^    public function header($name, $value = null) {$/;"	f
+headers	flight/net/Response.php	/^        $this->headers = array();$/;"	v
+headers	flight/net/Response.php	/^    protected $headers = array();$/;"	v
+headers	flight/net/Response.php	/^    public function headers() {$/;"	f
+hook	flight/core/Dispatcher.php	/^    public function hook($name, $type, $callback) {$/;"	f
+id	flight/Engine.php	/^        $id = (($type === 'weak') ? 'W\/' : '').$id;$/;"	v
+ids	flight/net/Route.php	/^        $ids = array();$/;"	v
+index	flight/net/Router.php	/^        $this->index = 0;$/;"	v
+index	flight/net/Router.php	/^    protected $index = 0;$/;"	v
+init	flight/Engine.php	/^    public function init() {$/;"	f
+init	flight/net/Request.php	/^    public function init($properties = array()) {$/;"	f
+initialized	flight/Engine.php	/^        $initialized = true;$/;"	v
+initialized	flight/Engine.php	/^        static $initialized = false;$/;"	v
+initialized	flight/Flight.php	/^            $initialized = true;$/;"	v
+initialized	flight/Flight.php	/^        static $initialized = false;$/;"	v
+instance	flight/core/Dispatcher.php	/^		$instance = is_object($class);$/;"	v
+instances	flight/core/Loader.php	/^        $this->instances = array();$/;"	v
+instances	flight/core/Loader.php	/^    protected $instances = array();$/;"	v
+instances	flight/core/Loader.php	/^ * a list of reusable class instances and can generate a new class$/;"	c
+invokeMethod	flight/core/Dispatcher.php	/^    public static function invokeMethod($func, array &$params = array()) {$/;"	f
+ip	flight/net/Request.php	/^    public $ip;$/;"	v
+is	flight/Flight.php	/^ * The Flight class is a static representation of the framework.$/;"	c
+is	flight/core/Dispatcher.php	/^ * The Dispatcher class is responsible for dispatching events. Events$/;"	c
+is	flight/core/Loader.php	/^ * The Loader class is responsible for loading objects. It maintains$/;"	c
+is	flight/net/Route.php	/^ * The Route class is responsible for routing an HTTP request to$/;"	c
+is	flight/net/Router.php	/^ * The Router class is responsible for routing an HTTP request to$/;"	c
+json	flight/Engine.php	/^        $json = ($encode) ? json_encode($data) : $data;$/;"	v
+k	flight/Engine.php	/^            foreach ($key as $k => $v) {$/;"	v
+k	flight/net/Response.php	/^            foreach ($name as $k => $v) {$/;"	v
+k	flight/net/Route.php	/^            foreach ($ids as $k => $v) {$/;"	v
+k	flight/template/View.php	/^            foreach ($key as $k => $v) {$/;"	v
+key	flight/util/Collection.php	/^        $key = key($this->data);$/;"	v
+key	flight/util/Collection.php	/^    public function key() {$/;"	f
+keys	flight/util/Collection.php	/^    public function keys() {$/;"	f
+last_char	flight/net/Route.php	/^        $last_char = substr($this->pattern, -1);$/;"	v
+len	flight/net/Route.php	/^            $len = strlen($url);$/;"	v
+length	flight/net/Request.php	/^    public $length;$/;"	v
+load	flight/core/Loader.php	/^    public function load($name, $shared = true) {$/;"	f
+loadClass	flight/core/Loader.php	/^    public static function loadClass($class) {$/;"	f
+loader	flight/Engine.php	/^        $this->loader = new Loader();$/;"	v
+loader	flight/Engine.php	/^    protected $loader;$/;"	v
+loader	tests/LoaderTest.php	/^        $this->loader = new \\flight\\core\\Loader();$/;"	v
+loader	tests/LoaderTest.php	/^    private $loader;$/;"	v
+loaders	tests/AutoloadTest.php	/^        $loaders = spl_autoload_functions();$/;"	v
+loaders	tests/FlightTest.php	/^        $loaders = spl_autoload_functions();$/;"	v
+map	flight/Engine.php	/^    public function map($name, $callback) {$/;"	f
+map	flight/net/Router.php	/^    public function map($pattern, $callback, $pass_route = false) {$/;"	f
+matchMethod	flight/net/Route.php	/^    public function matchMethod($method) {$/;"	f
+matchUrl	flight/net/Route.php	/^    public function matchUrl($url, $case_sensitive = false) {$/;"	f
+message	flight/Engine.php	/^    public function _halt($code = 200, $message = '') {$/;"	v
+message	flight/Flight.php	/^ * @method  static void halt($code = 200, $message = '') Stop the framework with an optional status code and message.$/;"	v
+method	flight/net/Request.php	/^            $method = $_REQUEST['_method'];$/;"	v
+method	flight/net/Request.php	/^            $method = $_SERVER['HTTP_X_HTTP_METHOD_OVERRIDE'];$/;"	v
+method	flight/net/Request.php	/^        $method = self::getMethod();$/;"	v
+method	flight/net/Request.php	/^        $method = self::getVar('REQUEST_METHOD', 'GET');$/;"	v
+method	flight/net/Request.php	/^        if ($method == 'POST' || $method == 'PUT' || $method == 'PATCH') {$/;"	v
+method	flight/net/Request.php	/^    public $method;$/;"	v
+method	tests/DispatcherTest.php	/^    \/\/ Map a class method$/;"	c
+method	tests/DispatcherTest.php	/^    \/\/ Map a static class method$/;"	c
+method	tests/MapTest.php	/^    \/\/ Map a class method$/;"	c
+method	tests/MapTest.php	/^    \/\/ Map a static class method$/;"	c
+methods	flight/Engine.php	/^        $methods = array($/;"	v
+methods	flight/Engine.php	/^     * Handles calls to class methods.$/;"	c
+methods	flight/core/Dispatcher.php	/^ * are simply aliases for class methods or functions. The Dispatcher$/;"	c
+methods	flight/net/Route.php	/^        $this->methods = $methods;$/;"	v
+methods	flight/net/Route.php	/^    public $methods = array();$/;"	v
+methods	flight/net/Router.php	/^            $methods = explode('|', $method);$/;"	v
+methods	flight/net/Router.php	/^        $methods = array('*');$/;"	v
+msg	flight/Engine.php	/^        $msg = sprintf('<h1>500 Internal Server Error<\/h1>'.$/;"	v
+n	flight/net/Route.php	/^            $n = 0;$/;"	v
+name	flight/net/Request.php	/^        foreach ($properties as $name => $value) {$/;"	v
+name	tests/classes/User.php	/^        $this->name = $name;$/;"	v
+name	tests/classes/User.php	/^    public $name;$/;"	v
+newInstance	flight/core/Loader.php	/^    public function newInstance($class, array $params = array()) {$/;"	f
+next	flight/net/Router.php	/^    public function next() {$/;"	f
+next	flight/util/Collection.php	/^    public function next() $/;"	f
+obj	flight/core/Loader.php	/^                $obj = $this->newInstance($class, $params);$/;"	v
+obj	flight/core/Loader.php	/^                $obj = ($exists) ?$/;"	v
+obj	flight/core/Loader.php	/^        $obj = null;$/;"	v
+obj	tests/LoaderTest.php	/^        $obj = $this->loader->load('e');$/;"	v
+obj	tests/LoaderTest.php	/^        $obj = $this->loader->load('f');$/;"	v
+obj2	tests/LoaderTest.php	/^        $obj2 = $this->loader->load('e');$/;"	v
+obj3	tests/LoaderTest.php	/^        $obj3 = $this->loader->load('e', false);$/;"	v
+offsetExists	flight/util/Collection.php	/^    public function offsetExists($offset) {$/;"	f
+offsetGet	flight/util/Collection.php	/^    public function offsetGet($offset) {$/;"	f
+offsetSet	flight/util/Collection.php	/^    public function offsetSet($offset, $value) {$/;"	f
+offsetUnset	flight/util/Collection.php	/^    public function offsetUnset($offset) {$/;"	f
+ok	tests/RouterTest.php	/^    function ok(){$/;"	f
+output	flight/core/Dispatcher.php	/^        $output = $this->execute($this->get($name), $params);$/;"	v
+output	flight/core/Dispatcher.php	/^        $output = '';$/;"	v
+output	flight/template/View.php	/^        $output = ob_get_clean();$/;"	v
+output	tests/ViewTest.php	/^        $output = $this->view->fetch('hello', array('name' => 'Bob'));$/;"	v
+param	flight/Engine.php	/^    public function _jsonp($data, $param = 'jsonp', $code = 200, $encode = true, $charset = 'utf-8') {$/;"	v
+param	flight/Flight.php	/^ * @method  static void jsonp($data, $param = 'jsonp', $code = 200, $encode = true) Sends a JSONP response.$/;"	v
+params	flight/Engine.php	/^            $params = array_values($route->params);$/;"	v
+params	flight/Engine.php	/^    public function register($name, $class, array $params = array(), $callback = null) {$/;"	v
+params	flight/Flight.php	/^ * @method  static void register($name, $class, array $params = array(), $callback = null) Registers a class to a framework method.$/;"	v
+params	flight/core/Dispatcher.php	/^    public function run($name, array $params = array()) {$/;"	v
+params	flight/core/Loader.php	/^    public function newInstance($class, array $params = array()) {$/;"	v
+params	flight/core/Loader.php	/^    public function register($name, $class, array $params = array(), $callback = null) {$/;"	v
+params	flight/net/Request.php	/^        $params = array();$/;"	v
+params	flight/net/Route.php	/^    public $params = array();$/;"	v
+params	tests/RouterTest.php	/^            $params = array_values($route->params);$/;"	v
+params	tests/RouterTest.php	/^        $params = array_values($route->params);$/;"	v
+parseQuery	flight/net/Request.php	/^    public static function parseQuery($url) {$/;"	f
+pass	flight/net/Route.php	/^        $this->pass = $pass;$/;"	v
+pass	flight/net/Route.php	/^    public $pass = false;$/;"	v
+pass_route	flight/Engine.php	/^    public function _route($pattern, $callback, $pass_route = false) {$/;"	v
+pass_route	flight/net/Router.php	/^    public function map($pattern, $callback, $pass_route = false) {$/;"	v
+path	flight/Engine.php	/^    public function path($dir) {$/;"	f
+path	flight/template/View.php	/^        $this->path = $path;$/;"	v
+path	flight/template/View.php	/^    public $path;$/;"	v
+pattern	flight/net/Route.php	/^        $this->pattern = $pattern;$/;"	v
+pattern	flight/net/Route.php	/^        if ($this->pattern === '*' || $this->pattern === $url) {$/;"	v
+pattern	flight/net/Route.php	/^    public $pattern;$/;"	v
+proxy_ip	flight/net/Request.php	/^    public $proxy_ip;$/;"	v
+query	flight/net/Request.php	/^    public $query;$/;"	v
+ref	flight/core/Loader.php	/^                $ref = array(&$obj);$/;"	v
+refClass	flight/core/Loader.php	/^                $refClass = new \\ReflectionClass($class);$/;"	v
+referrer	flight/net/Request.php	/^    public $referrer;$/;"	v
+regex	flight/net/Route.php	/^            $this->regex = $regex;$/;"	v
+regex	flight/net/Route.php	/^        $regex = preg_replace_callback($/;"	v
+regex	flight/net/Route.php	/^        $regex = str_replace(array(')','\/*'), array(')?','(\/?|\/.*?)'), $this->pattern);$/;"	v
+regex	flight/net/Route.php	/^    public $regex;$/;"	v
+register	flight/Engine.php	/^    public function register($name, $class, array $params = array(), $callback = null) {$/;"	f
+register	flight/core/Loader.php	/^    public function register($name, $class, array $params = array(), $callback = null) {$/;"	f
+render	flight/template/View.php	/^    public function render($file, $data = null) {$/;"	f
+represents	flight/net/Request.php	/^ * The Request class represents an HTTP request. Data from$/;"	c
+represents	flight/net/Response.php	/^ * The Response class represents an HTTP response. The object$/;"	c
+represents	flight/template/View.php	/^ * The View class represents output to be displayed. It provides$/;"	c
+request	flight/Engine.php	/^        $request = $this->request();$/;"	v
+request	tests/FlightTest.php	/^        $request = Flight::request();$/;"	v
+request	tests/RequestTest.php	/^        $request = new \\flight\\net\\Request();$/;"	v
+request	tests/RequestTest.php	/^        $this->request = new \\flight\\net\\Request();$/;"	v
+request	tests/RequestTest.php	/^    private $request;$/;"	v
+request	tests/RouterTest.php	/^        $this->request = new \\flight\\net\\Request();$/;"	v
+request	tests/RouterTest.php	/^    private $request;$/;"	v
+reset	flight/core/Dispatcher.php	/^    public function reset() {$/;"	f
+reset	flight/core/Loader.php	/^    public function reset() {$/;"	f
+reset	flight/net/Router.php	/^    public  function reset() {$/;"	f
+response	flight/Engine.php	/^        $response = $this->response();$/;"	v
+response	tests/FlightTest.php	/^        $response = Flight::response();$/;"	v
+result	tests/DispatcherTest.php	/^        $result = $this->dispatcher->run('hello', array('Bob'));$/;"	v
+result	tests/DispatcherTest.php	/^        $result = $this->dispatcher->run('map1');$/;"	v
+result	tests/DispatcherTest.php	/^        $result = $this->dispatcher->run('map2');$/;"	v
+result	tests/DispatcherTest.php	/^        $result = $this->dispatcher->run('map3');$/;"	v
+result	tests/DispatcherTest.php	/^        $result = $this->dispatcher->run('map4');$/;"	v
+result	tests/FilterTest.php	/^        $result = $this->app->bye('Joe');$/;"	v
+result	tests/FilterTest.php	/^        $result = $this->app->hello('Bob');$/;"	v
+result	tests/FlightTest.php	/^        $result = Flight::map1();$/;"	v
+result	tests/MapTest.php	/^        $result = $this->app->map1();$/;"	v
+result	tests/MapTest.php	/^        $result = $this->app->map2();$/;"	v
+result	tests/MapTest.php	/^        $result = $this->app->map3();$/;"	v
+result	tests/MapTest.php	/^        $result = $this->app->map4();$/;"	v
+rewind	flight/util/Collection.php	/^    public function rewind() {$/;"	f
+route	flight/net/Router.php	/^    public function route(Request $request) {$/;"	f
+route	tests/RouterTest.php	/^        $route = $this->router->route($this->request);$/;"	v
+routeRequest	tests/RouterTest.php	/^    function routeRequest() {$/;"	f
+router	flight/Engine.php	/^        $router = $this->router();$/;"	v
+router	tests/FlightTest.php	/^        $router = Flight::router();$/;"	v
+router	tests/RouterTest.php	/^        $this->router = new \\flight\\net\\Router();$/;"	v
+router	tests/RouterTest.php	/^    private $router;$/;"	v
+routes	flight/net/Router.php	/^        $this->routes = array();$/;"	v
+routes	flight/net/Router.php	/^    protected $routes = array();$/;"	v
+run	flight/core/Dispatcher.php	/^    public function run($name, array $params = array()) {$/;"	f
+sayBye	tests/classes/Hello.php	/^    public static function sayBye() {$/;"	f
+sayHi	tests/classes/Hello.php	/^    public function sayHi() {$/;"	f
+scheme	flight/net/Request.php	/^    public $scheme;$/;"	v
+secure	flight/net/Request.php	/^    public $secure;$/;"	v
+self	flight/Engine.php	/^        $self = $this;$/;"	v
+send	flight/net/Response.php	/^    public function send() {$/;"	f
+sendHeaders	flight/net/Response.php	/^    public function sendHeaders() {$/;"	f
+set	flight/Engine.php	/^    public function set($key, $value = null) {$/;"	f
+set	flight/core/Dispatcher.php	/^    public function set($name, $callback) {$/;"	f
+set	flight/template/View.php	/^    public function set($key, $value = null) {$/;"	f
+setData	flight/util/Collection.php	/^    public function setData(array $data) {$/;"	f
+setUp	tests/AutoloadTest.php	/^    function setUp() {$/;"	f
+setUp	tests/DispatcherTest.php	/^    function setUp(){$/;"	f
+setUp	tests/FilterTest.php	/^    function setUp() {$/;"	f
+setUp	tests/FlightTest.php	/^    function setUp() {$/;"	f
+setUp	tests/LoaderTest.php	/^    function setUp(){$/;"	f
+setUp	tests/MapTest.php	/^    function setUp() {$/;"	f
+setUp	tests/RedirectTest.php	/^    function setUp() {$/;"	f
+setUp	tests/RegisterTest.php	/^    function setUp() {$/;"	f
+setUp	tests/RenderTest.php	/^    function setUp() {$/;"	f
+setUp	tests/RequestTest.php	/^    function setUp() {$/;"	f
+setUp	tests/RouterTest.php	/^    function setUp(){$/;"	f
+setUp	tests/VariableTest.php	/^    function setUp() {$/;"	f
+setUp	tests/ViewTest.php	/^    function setUp() {$/;"	f
+shared	flight/Engine.php	/^        $shared = (!empty($params)) ? (bool)$params[0] : true;$/;"	v
+shared	flight/core/Loader.php	/^    public function load($name, $shared = true) {$/;"	v
+splat	flight/net/Route.php	/^            $this->splat = (string)substr($url, $i+1);$/;"	v
+splat	flight/net/Route.php	/^    public $splat = '';$/;"	v
+status	flight/net/Response.php	/^            $this->status = $code;$/;"	v
+status	flight/net/Response.php	/^        $this->status = 200;$/;"	v
+status	flight/net/Response.php	/^    protected $status = 200;$/;"	v
+status	flight/net/Response.php	/^    public function status($code = null) {$/;"	f
+template	flight/template/View.php	/^        $this->template = $this->getTemplate($file);$/;"	v
+template	flight/template/View.php	/^    private $template;$/;"	v
+test	tests/AutoloadTest.php	/^            $test = $this->app->test();$/;"	v
+test	tests/AutoloadTest.php	/^        $test = null;$/;"	v
+test	tests/LoaderTest.php	/^        $test = $this->loader->load('tests');$/;"	v
+testAbsoluteUrl	tests/RedirectTest.php	/^    function testAbsoluteUrl(){$/;"	f
+testAutoload	tests/AutoloadTest.php	/^    function testAutoload(){$/;"	f
+testAutoload	tests/LoaderTest.php	/^    function testAutoload(){$/;"	f
+testBase	tests/RedirectTest.php	/^    function testBase(){$/;"	f
+testBaseOverride	tests/RedirectTest.php	/^    function testBaseOverride(){$/;"	f
+testBeforeAndAfter	tests/DispatcherTest.php	/^    function testBeforeAndAfter() {$/;"	f
+testBeforeAndAfter	tests/FilterTest.php	/^    function testBeforeAndAfter() {$/;"	f
+testCaseSensitivity	tests/RouterTest.php	/^    function testCaseSensitivity() {$/;"	f
+testClassMethodMapping	tests/DispatcherTest.php	/^    function testClassMethodMapping(){$/;"	f
+testClassMethodMapping	tests/MapTest.php	/^    function testClassMethodMapping(){$/;"	f
+testClear	tests/VariableTest.php	/^    function testClear() {$/;"	f
+testClearAll	tests/VariableTest.php	/^    function testClearAll() {$/;"	f
+testClosureMapping	tests/DispatcherTest.php	/^    function testClosureMapping(){$/;"	f
+testClosureMapping	tests/MapTest.php	/^    function testClosureMapping(){$/;"	f
+testCollections	tests/RequestTest.php	/^    function testCollections() {$/;"	f
+testDefaultComponents	tests/FlightTest.php	/^    function testDefaultComponents(){$/;"	f
+testDefaultRoute	tests/RouterTest.php	/^    function testDefaultRoute(){$/;"	f
+testDefaults	tests/RequestTest.php	/^    function testDefaults() {$/;"	f
+testFetch	tests/ViewTest.php	/^    function testFetch() {$/;"	f
+testFilterChaining	tests/FilterTest.php	/^    function testFilterChaining() {$/;"	f
+testFunctionMapping	tests/DispatcherTest.php	/^    function testFunctionMapping(){$/;"	f
+testFunctionMapping	tests/MapTest.php	/^    function testFunctionMapping(){$/;"	f
+testGetAndSet	tests/FlightTest.php	/^    function testGetAndSet(){$/;"	f
+testGetPostRoute	tests/RouterTest.php	/^    function testGetPostRoute(){$/;"	f
+testHas	tests/VariableTest.php	/^    function testHas() {$/;"	f
+testHttpUrl	tests/RedirectTest.php	/^    function testHttpUrl(){$/;"	f
+testInvalidCallback	tests/DispatcherTest.php	/^    function testInvalidCallback() {$/;"	f
+testIpAddress	tests/RequestTest.php	/^    function testIpAddress() {$/;"	f
+testMap	tests/FlightTest.php	/^    function testMap(){$/;"	f
+testMapOverridesRegister	tests/RegisterTest.php	/^    function testMapOverridesRegister(){$/;"	f
+testMethodOverrideWithHeader	tests/RequestTest.php	/^    function testMethodOverrideWithHeader() {$/;"	f
+testMethodOverrideWithPost	tests/RequestTest.php	/^    function testMethodOverrideWithPost() {$/;"	f
+testMissingClass	tests/AutoloadTest.php	/^    function testMissingClass(){$/;"	f
+testNotFound	tests/RouterTest.php	/^    function testNotFound() {$/;"	f
+testOptionalParameters	tests/RouterTest.php	/^    function testOptionalParameters(){$/;"	f
+testPathRoute	tests/RouterTest.php	/^    function testPathRoute(){$/;"	f
+testPostRoute	tests/RouterTest.php	/^    function testPostRoute(){$/;"	f
+testQueryParameters	tests/RequestTest.php	/^    function testQueryParameters() {$/;"	f
+testRegEx	tests/RouterTest.php	/^    function testRegEx(){$/;"	f
+testRegExParameters	tests/RouterTest.php	/^    function testRegExParameters(){$/;"	f
+testRegexEmptyOptionalParameters	tests/RouterTest.php	/^    function testRegexEmptyOptionalParameters(){$/;"	f
+testRegexOptionalParameters	tests/RouterTest.php	/^    function testRegexOptionalParameters(){$/;"	f
+testRegister	tests/FlightTest.php	/^    function testRegister(){$/;"	f
+testRegister	tests/LoaderTest.php	/^    function testRegister(){$/;"	f
+testRegister	tests/RegisterTest.php	/^    function testRegister(){$/;"	f
+testRegisterUsingCallable	tests/LoaderTest.php	/^    function testRegisterUsingCallable(){$/;"	f
+testRegisterUsingCallback	tests/LoaderTest.php	/^    function testRegisterUsingCallback(){$/;"	f
+testRegisterWithConstructor	tests/LoaderTest.php	/^    function testRegisterWithConstructor(){$/;"	f
+testRegisterWithConstructor	tests/RegisterTest.php	/^    function testRegisterWithConstructor(){$/;"	f
+testRegisterWithInitialization	tests/LoaderTest.php	/^    function testRegisterWithInitialization(){$/;"	f
+testRegisterWithInitialization	tests/RegisterTest.php	/^    function testRegisterWithInitialization(){$/;"	f
+testRelativeUrl	tests/RedirectTest.php	/^    function testRelativeUrl(){$/;"	f
+testRender	tests/ViewTest.php	/^    function testRender() {$/;"	f
+testRenderLayout	tests/RenderTest.php	/^    function testRenderLayout(){$/;"	f
+testRenderView	tests/RenderTest.php	/^    function testRenderView(){$/;"	f
+testRouteObjectPassing	tests/RouterTest.php	/^    function testRouteObjectPassing(){$/;"	f
+testSetAndGet	tests/VariableTest.php	/^    function testSetAndGet() {$/;"	f
+testSharedInstance	tests/LoaderTest.php	/^    function testSharedInstance() {$/;"	f
+testSharedInstance	tests/RegisterTest.php	/^    function testSharedInstance() {$/;"	f
+testSplatNamedPlusWildcard	tests/RouterTest.php	/^    function testSplatNamedPlusWildcard(){$/;"	f
+testSplatWildcard	tests/RouterTest.php	/^    function testSplatWildcard(){$/;"	f
+testSplatWildcardTrailingSlash	tests/RouterTest.php	/^    function testSplatWildcardTrailingSlash(){$/;"	f
+testStaticClassMethodMapping	tests/DispatcherTest.php	/^    function testStaticClassMethodMapping(){$/;"	f
+testStaticClassMethodMapping	tests/MapTest.php	/^    function testStaticClassMethodMapping(){$/;"	f
+testSubdirectory	tests/RequestTest.php	/^    function testSubdirectory() {$/;"	f
+testTemplateExists	tests/ViewTest.php	/^    function testTemplateExists() {$/;"	f
+testTemplateWithCustomExtension	tests/ViewTest.php	/^    function testTemplateWithCustomExtension() {$/;"	f
+testTemplateWithExtension	tests/ViewTest.php	/^    function testTemplateWithExtension() {$/;"	f
+testUrlParameters	tests/RouterTest.php	/^    function testUrlParameters(){$/;"	f
+testVariables	tests/ViewTest.php	/^    function testVariables() {$/;"	f
+testWildcard	tests/RouterTest.php	/^    function testWildcard(){$/;"	f
+to	flight/Engine.php	/^     * Registers a class to a framework method.$/;"	c
+to	flight/Flight.php	/^ * @method  static void register($name, $class, array $params = array(), $callback = null) Registers a class to a framework method.$/;"	c
+to	flight/core/Dispatcher.php	/^     * @param string $func Name of function to call$/;"	f
+to	flight/core/Loader.php	/^     * @param string|callable $class Class name or callback function to instantiate class$/;"	f
+to	flight/core/Loader.php	/^     * @param string|callable $class Class name or function to instantiate class$/;"	f
+type	flight/Engine.php	/^    public function _etag($id, $type = 'strong') {$/;"	v
+type	flight/Flight.php	/^ * @method  static void etag($id, $type = 'strong') Performs ETag HTTP caching.$/;"	v
+type	flight/net/Request.php	/^    public $type;$/;"	v
+unregister	flight/core/Loader.php	/^    public function unregister($name) {$/;"	f
+url	flight/Engine.php	/^            $url = preg_replace('#\/+#', '\/', $base.'\/'.$url);$/;"	v
+url	flight/net/Request.php	/^            $this->url = '\/';$/;"	v
+url	flight/net/Request.php	/^            $this->url = substr($this->url, strlen($this->base));$/;"	v
+url	flight/net/Request.php	/^    public $url;$/;"	v
+url	flight/net/Router.php	/^        $url = $pattern;$/;"	v
+url	tests/RedirectTest.php	/^            $url = preg_replace('#\/+#', '\/', $base.'\/'.$url);$/;"	v
+url	tests/RedirectTest.php	/^        $url = '\/login';$/;"	v
+url	tests/RedirectTest.php	/^        $url = 'http:\/\/www.yahoo.com';$/;"	v
+url	tests/RedirectTest.php	/^        $url = 'login';$/;"	v
+user	tests/AutoloadTest.php	/^        $user = $this->app->user();$/;"	v
+user	tests/FlightTest.php	/^        $user = Flight::user();$/;"	v
+user	tests/LoaderTest.php	/^        $user = $this->loader->load('a');$/;"	v
+user	tests/LoaderTest.php	/^        $user = $this->loader->load('b');$/;"	v
+user	tests/LoaderTest.php	/^        $user = $this->loader->load('c');$/;"	v
+user	tests/RegisterTest.php	/^        $user = $this->app->reg1();$/;"	v
+user	tests/RegisterTest.php	/^        $user = $this->app->reg2();$/;"	v
+user	tests/RegisterTest.php	/^        $user = $this->app->reg3();$/;"	v
+user	tests/RegisterTest.php	/^        $user = $this->app->reg5();$/;"	v
+user1	tests/LoaderTest.php	/^        $user1 = $this->loader->load('d');$/;"	v
+user1	tests/RegisterTest.php	/^        $user1 = $this->app->reg4();$/;"	v
+user2	tests/LoaderTest.php	/^        $user2 = $this->loader->load('d');$/;"	v
+user2	tests/RegisterTest.php	/^        $user2 = $this->app->reg4();$/;"	v
+user3	tests/LoaderTest.php	/^        $user3 = $this->loader->load('d', false);$/;"	v
+user3	tests/RegisterTest.php	/^        $user3 = $this->app->reg4(false);$/;"	v
+user_agent	flight/net/Request.php	/^    public $user_agent;$/;"	v
+valid	flight/util/Collection.php	/^    public function valid()$/;"	f
+value	flight/Engine.php	/^    public function set($key, $value = null) {$/;"	v
+value	flight/net/Response.php	/^    public function header($name, $value = null) {$/;"	v
+value	flight/template/View.php	/^    public function set($key, $value = null) {$/;"	v
+var	tests/FlightTest.php	/^        $var = Flight::get('a');$/;"	v
+var	tests/VariableTest.php	/^        $var = $this->app->get('a');$/;"	v
+var	tests/VariableTest.php	/^        $var = $this->app->get('b');$/;"	v
+var	tests/VariableTest.php	/^        $var = $this->app->get('c');$/;"	v
+vars	flight/Engine.php	/^            $this->vars = array();$/;"	v
+vars	flight/Engine.php	/^        $this->vars = array();$/;"	v
+vars	flight/Engine.php	/^    protected $vars;$/;"	v
+vars	flight/template/View.php	/^            $this->vars = array();$/;"	v
+vars	flight/template/View.php	/^            $this->vars = array_merge($this->vars, $data);$/;"	v
+vars	flight/template/View.php	/^    protected $vars = array();$/;"	v
+vars	tests/FlightTest.php	/^        $vars = Flight::get();$/;"	v
+view	tests/FlightTest.php	/^        $view = Flight::view();$/;"	v
+view	tests/ViewTest.php	/^        $this->view = new \\flight\\template\\View();$/;"	v
+view	tests/ViewTest.php	/^    private $view;$/;"	v
+with	tests/LoaderTest.php	/^    \/\/ Register a class with constructor parameters$/;"	c
+with	tests/LoaderTest.php	/^    \/\/ Register a class with initialization$/;"	c
+with	tests/RegisterTest.php	/^    \/\/ Register a class with constructor parameters$/;"	c
+with	tests/RegisterTest.php	/^    \/\/ Register a class with initialization$/;"	c
+write	flight/net/Response.php	/^    public function write($str) {$/;"	f
