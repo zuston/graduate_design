@@ -20,11 +20,11 @@ require './core/ErrorMap.php';
 require './service/userService.php';
 //require_once './core/AutoLoad.php';
 ActiveRecord::setDb(new PDO("mysql:host=localhost;dbname=bookManage","root","shacha"));
- Flight::route('/*',function(){
+ Flight::route('/user/login',function(){
       if(Core::getSessionState()){
           return true;
       }else{
-          echo 222222;
+          return true;
       }
  });
 
@@ -45,10 +45,29 @@ Flight::route('/login/*', function(){
 });
 
 Flight::route('/api/import',function(){
-    var_dump(import_1());
+    $xs = new XS('demo');
+    $doc = new XSDocument();
+    $index = $xs -> index;
+    $models = userService::getAllBook();
+    foreach ($models as $model){
+        $data = array(
+            'pid' => $model->book_id,
+            'book_code' => $model->book_code,
+            'book_name' => $model->book_name,
+            'book_author' => $model->book_author,
+            'book_type' => $model->book_type,
+        );
+        $doc -> setFields($data);
+        $index -> add($doc);
+    }
+    echo 2222;exit;
 });
 
-
+Flight::route('/api/search/',function(){
+    $xs = new XS('demo');
+    $search = $xs->search;
+    var_dump($search->count('hello'));
+});
 
 Flight::start();
 

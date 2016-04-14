@@ -12,4 +12,9 @@ class userService
         $user = new userModel();
         return $user->eq('user_id',$user_id)->find();
     }
+
+    public static function getAllBook(){
+        $bookModels = new bookModel();
+        return $bookModels->findAll();
+    }
 }
