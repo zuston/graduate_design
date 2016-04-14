@@ -1,8 +1,8 @@
 <?php
 require './extension/xunsearch/lib/XS.php';
-// $xs = new XS('demo');
-// $doc = $xs->search->search('项目');
-// print_r($doc);exit;
+ $xs = new XS('demo');
+ $doc = $xs->search->search('项目');
+ print_r($doc);exit;
 require './extension/flight/flight/Flight.php';
 require './extension/activerecord/ActiveRecord.php';
 require './model/adminModel.php';
