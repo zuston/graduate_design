@@ -1,5 +1,5 @@
 <?php
-$file = fopen('test.txt','r') or exit('unable to open file');
+$file = fopen('data_book_1.txt','r') or exit('unable to open file');
 $all_array = array();
 while(!feof($file)){
 	$array = split(' ',fgets($file));
