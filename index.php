@@ -20,7 +20,11 @@ require './service/userService.php';
 ActiveRecord::setDb(new PDO("mysql:host=localhost;dbname=bookManage","root","shacha"));
 
 Flight::route('/*',function(){
-	 return true;
+     if(Core::getSessionState()){
+         return true;
+     }else{
+         Core::render('login');
+     }
 });
 
 Flight::route('/login/@verify',function($verify){

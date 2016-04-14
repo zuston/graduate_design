@@ -80,12 +80,16 @@ class Core
         return false;
     }
 
-    public static function setSessionState($key){
-        $_SESSION['state'] = $key;
+    public static function loginSessionState(){
+        $_SESSION['state'] = 1;
+    }
+
+    public static function logoutSessionState(){
+        $_SESSION['state'] = 0;
     }
 
     public static function getSessionState(){
-        return $_SESSION['state'];
+        return ($_SESSION['state'])?true:false;
     }
 
 }
