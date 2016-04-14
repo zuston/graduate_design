@@ -20,9 +20,6 @@ require './Core/ErrorMap.php';
 require './service/userService.php';
 
 //require_once './core/AutoLoad.php';
-require './data_book_export_1.php';
-require './data_book_export_2.php';
-
 
 ActiveRecord::setDb(new PDO("mysql:host=localhost;dbname=bookManage","root","shacha"));
 
