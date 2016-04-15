@@ -80,12 +80,14 @@ class Core
         return false;
     }
 
-    public static function loginSessionState(){
+    public static function loginSession($user_id){
         $_SESSION['state'] = 1;
+        $_SESSION['user_id'] = $user_id;
     }
 
-    public static function logoutSessionState(){
+    public static function logoutSession(){
         $_SESSION['state'] = 0;
+        $_SESSION['user_id'] = 0;
     }
 
     public static function getSessionState(){
@@ -93,6 +95,9 @@ class Core
             return false;
         }
         return ($_SESSION['state'])?true:false;
+    }
+    public static function getSessionId(){
+        return $_SESSION['user_id'];
     }
 
 }

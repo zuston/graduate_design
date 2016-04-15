@@ -1,5 +1,13 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: zuston
+ * Date: 16/4/15
+ * Time: 上午12:21
+ */
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,3 +98,64 @@
         </div>
         <!-- /.navbar-static-side -->
     </nav>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">热门书籍推荐</h1>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-sm-6 col-md-2">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#" class="thumbnail">
+                            <img src="view/static/pic/kittens.jpg"
+                                 alt="通用的占位符缩略图">
+                        </a>
+                    </div>
+                    <div class="col-md-12">
+                        <span style="margin-left: 10px;">我爱着我的世界</span>
+                    </div>
+                    <div class="col-md-8">
+                        <a>作者:</a><span>zuston</span>
+                    </div>
+                    <div class="col-md-4"><a>借阅</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+<script src="view/static/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="view/static/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="view/static/js/metisMenu.min.js"></script>
+
+<!-- DataTables JavaScript -->
+<script src="view/static/js/jquery.dataTables.min.js"></script>
+<script src="view/static/js/dataTables.bootstrap.min.js"></script>
+<script src="view/static/js/dataTables.responsive.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="view/static/js/sb-admin-2.js"></script>
+
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+<script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+</script>
+
+</body>
+
+</html>

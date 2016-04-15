@@ -80,7 +80,7 @@
                         <a href="/rankbook"><i class="fa fa-table fa-fw"></i>借阅排行榜</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>个人首页<span class="fa arrow"></span></a>
+                        <a href="/main"><i class="fa fa-bar-chart-o fa-fw"></i>个人首页<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="/userbookcount">个人借阅统计</a>

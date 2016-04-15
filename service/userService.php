@@ -21,9 +21,15 @@ class userService
         }
 
         if($userModel->user_password==$password){
-            Core::loginSessionState();
+            Core::loginSession($userModel->user_id);
             return $userModel;
         }
         return false;
+    }
+
+    public static function getUserModelByPk($user_id){
+        $userModel = new userModel();
+        $userModel = $userModel->eq('user_id',$user_id)->find();
+        return $userModel;
     }
 }

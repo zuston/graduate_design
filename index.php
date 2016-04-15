@@ -24,33 +24,63 @@ require './service/loginService.php';
 
 ActiveRecord::setDb(new PDO("mysql:host=localhost;dbname=bookManage","root","shacha"));
 
-/**
- * 登录状态监测
- */
-Flight::route('/main/*',function(){
-    var_dump(Core::getSessionState());exit;
+Flight::route('/',function(){
     if(Core::getSessionState()){
-        return true;
+        $user_id = Core::getSessionId();
+        $userModel = userService::getUserModelByPk($user_id);
+        Core::render('main',$userModel);
     }else{
         Core::render('login');
     }
 });
 
-/**
- * 登录功能
- */
+
+Flight::route('/main',function(){
+    if(Core::getSessionState()){
+        $user_id = Core::getSessionId();
+        $userModel = userService::getUserModelByPk($user_id);
+        Core::render('main',$userModel);
+    }else{
+        Flight::redirect('/');
+    }
+});
+
+Flight::route('/hotbook',function(){
+    $user_id = Core::getSessionId();
+    $userModel = userService::getUserModelByPk($user_id);
+    Core::render('hotbook',$userModel);
+});
+
+Flight::route('/returnbook',function(){
+    $user_id = Core::getSessionId();
+    $userModel = userService::getUserModelByPk($user_id);
+    Core::render('returnbook',$userModel);
+});
+
+Flight::route('/rankbook',function(){
+    $user_id = Core::getSessionId();
+    $userModel = userService::getUserModelByPk($user_id);
+    Core::render('rankbook',$userModel);
+});
+
+Flight::route('/userbookcount',function(){
+    $user_id = Core::getSessionId();
+    $userModel = userService::getUserModelByPk($user_id);
+    Core::render('userbookcount',$userModel);
+});
+
 Flight::route('/login/user', function(){
     $username = Core::r('username');
     $password = Core::r('password');
     $keeplogin = Core::r('keeplogin');
     if(!isset($username)||!isset($password)){
-        Flight::redirect('/main');
+        Flight::redirect('/');
     }
     $userModel = userService::verifyLogin($username,$password);
-    if(is_object($userModel)){
-        Flight::redirect('/main/user/userinfo');
+    if($userModel!=false){
+        Core::render('main',$userModel);
     }else{
-        Flight::redirect('/main');
+        Flight::redirect('/');
     }
 });
 
@@ -73,11 +103,7 @@ Flight::route('/api/import',function(){
     echo 2222;exit;
 });
 
-Flight::route('/main/user/userinfo',function(){
-   Core::render('main');
-});
-
-Flight::route('/api/search/',function(){
+Flight::route('/api/search',function(){
     $xs = new XS('demo');
     $search = $xs->search;
     var_dump($search->count('hello'));
