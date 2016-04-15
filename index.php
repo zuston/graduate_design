@@ -103,11 +103,6 @@ Flight::route('/api/import',function(){
     echo 2222;exit;
 });
 
-Flight::route('/api/search',function(){
-    $xs = new XS('demo');
-    $search = $xs->search;
-    var_dump($search->count('hello'));
-});
 
 Flight::start();
 
