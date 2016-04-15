@@ -78,6 +78,7 @@ Flight::route('/main/user/userinfo',function(){
 });
 
 Flight::route('/api/search/',function(){
+   //注释
     $xs = new XS('demo');
     $search = $xs->search;
     var_dump($search->count('hello'));
