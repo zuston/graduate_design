@@ -84,7 +84,10 @@ Flight::route('/login/user', function(){
     }
 });
 
-Flight::route('/api/import',function(){
+/**
+ *xunsearch索引数据导入
+ */
+Flight::route('/api/xunsearch/import',function(){
     $xs = new XS('demo');
     $doc = new XSDocument();
     $index = $xs -> index;
@@ -103,6 +106,14 @@ Flight::route('/api/import',function(){
     echo 2222;exit;
 });
 
+Flight::route('/api/db/import',funtion(){
+    $userModel = new userModel();
+    $name_1 = array('殷','丁','马','黄','姜','仇','李','施','魏','许','吴','刘','周','郑');
+    $name_2 = array('高','子','英','妮','豪','杰','华','帆','樊','德','级','导','硕','博','本','科','科','乐','肋','撒','但','珀',);
+    $name_3 = array('','','','','','','','','','','','','','','','','','','','','','','','','',);
+    $userModer -> user_name = '';
+
+});
 
 Flight::start();
 
