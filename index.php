@@ -106,13 +106,23 @@ Flight::route('/api/xunsearch/import',function(){
     echo 2222;exit;
 });
 
-Flight::route('/api/db/import',funtion(){
+Flight::route('/api/db/import',function(){
     $userModel = new userModel();
     $name_1 = array('殷','丁','马','黄','姜','仇','李','施','魏','许','吴','刘','周','郑');
-    $name_2 = array('高','子','英','妮','豪','杰','华','帆','樊','德','级','导','硕','博','本','科','科','乐','肋','撒','但','珀',);
-    $name_3 = array('','','','','','','','','','','','','','','','','','','','','','','','','',);
-    $userModer -> user_name = '';
+    $name_2 = array('高','子','英','妮','豪','杰','华','帆','樊','德','级','导','硕','博','本','科','科','乐','肋','撒','但','珀');
+    $name_3 = array('需','和','杰','空','看','心','信','新','路','有','录','维','为','请','落','魄','力','利','期','器','冰','宾','林','琳','临');
 
+    $userModel -> user_name = $name_1[rand(0,count($name_1)-1)].$name_1[rand(0,count($name_2)-1)];
+    $userModel -> user_email = 'jinxi32@163.com';
+    $userModel -> user_password = 'shacha123';
+    $userModel -> user_age = 24;
+    $userModel -> user_sex = 1;
+    $userModel -> user_class = 71;
+    $userModel -> user_type = 1 ;
+    $userModel -> user_major = 1 ;
+    $userModel -> user_grade = 2012;
+    $userModel -> user_academy = 1;
+    $userModel -> insert();
 });
 
 Flight::start();
