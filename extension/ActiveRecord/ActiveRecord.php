@@ -116,6 +116,7 @@ abstract class ActiveRecord extends Base {
      */
     public static function setDb($db) {
         self::$db = $db;
+        self::$db -> exec("SET NAMES utf8");
     }
     /**
      * function to find one record and assign in to current object.

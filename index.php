@@ -15,14 +15,14 @@ require './model/userStateLogModel.php';
 
 require './core/Core.php';
 require './core/ErrorMap.php';
-
+require './core/Db.php';
 require './service/userService.php';
 require './service/adminService.php';
 require './service/loginService.php';
-
+require './service/accountingService.php';
 //require_once './core/AutoLoad.php';
 
-ActiveRecord::setDb(new PDO("mysql:host=localhost;dbname=bookManage","root","shacha"));
+ActiveRecord::setDb(new PDO("mysql:host=115.159.149.23;dbname=bookManage","root","shacha"));
 
 Flight::route('/',function(){
     if(Core::getSessionState()){
@@ -33,7 +33,20 @@ Flight::route('/',function(){
         Core::render('login');
     }
 });
-
+Flight::route('/login/user', function(){
+    $username = Core::r('username');
+    $password = Core::r('password');
+    $keeplogin = Core::r('keeplogin');
+    if(!isset($username)||!isset($password)){
+        Flight::redirect('/');
+    }
+    $userModel = userService::verifyLogin($username,$password);
+    if($userModel!=false){
+        Flight::redirect('/');
+    }else{
+        Flight::redirect('/');
+    }
+});
 
 Flight::route('/main',function(){
     if(Core::getSessionState()){
@@ -46,9 +59,12 @@ Flight::route('/main',function(){
 });
 
 Flight::route('/hotbook',function(){
+    header('Content-Type: text/html; charset=utf-8');
     $user_id = Core::getSessionId();
     $userModel = userService::getUserModelByPk($user_id);
-    Core::render('hotbook',$userModel);
+    $hotbooks = new userBookRelationModel();
+    $models = $hotbooks -> select('count(*) as number,book_id') -> groupby('book_id') -> orderby('number desc') -> limit(0,24) -> findAll();
+    Core::render('hotbook',array('userModel'=>$userModel,'hotbookModels'=>$models));
 });
 
 Flight::route('/returnbook',function(){
@@ -60,7 +76,10 @@ Flight::route('/returnbook',function(){
 Flight::route('/rankbook',function(){
     $user_id = Core::getSessionId();
     $userModel = userService::getUserModelByPk($user_id);
-    Core::render('rankbook',$userModel);
+    for($i=0;$i<6;$i++){
+        $row[$i] = accountingService::getRowsOfRankByBookType($i+1);
+    }
+    Core::render('rankbook',array('userModel'=>$userModel,'rows'=>$row));
 });
 
 Flight::route('/userbookcount',function(){
@@ -69,20 +88,7 @@ Flight::route('/userbookcount',function(){
     Core::render('userbookcount',$userModel);
 });
 
-Flight::route('/login/user', function(){
-    $username = Core::r('username');
-    $password = Core::r('password');
-    $keeplogin = Core::r('keeplogin');
-    if(!isset($username)||!isset($password)){
-        Flight::redirect('/');
-    }
-    $userModel = userService::verifyLogin($username,$password);
-    if($userModel!=false){
-        Core::render('main',$userModel);
-    }else{
-        Flight::redirect('/');
-    }
-});
+
 
 
 

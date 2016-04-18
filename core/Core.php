@@ -22,10 +22,27 @@ class Core
             return ErrorMap::TEMPLATE_HTML_ERROR;
         }
 
-        if (is_array($array)) {
+        if(is_array($array)){
             extract($array);
         }
+
         if (is_object($array)) {
+            $array_object = (array)$array;
+            $array_data = $array_object['data'];
+            extract($array_data);
+        }
+        require_once __DIR__ . '/' . $filepath . $filenamePath;
+        return ErrorMap::SUCCESS;
+    }
+
+    public static function renderArray($filename,$array){
+        $filepath = '../view/';
+        $filenamePath = $filename . '.html.php';
+        if (!file_exists(__DIR__ . '/' . $filepath . $filenamePath)) {
+            return ErrorMap::TEMPLATE_HTML_ERROR;
+        }
+
+        if (is_array($array)) {
             $array_object = (array)$array;
             $array_data = $array_object['data'];
             extract($array_data);

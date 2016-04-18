@@ -13,13 +13,13 @@
 
 <head>
 
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content='text/html'; charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?= $user_id?>的图书借阅</title>
+    <title><?php echo $userModel->user_id;?>的图书借阅</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="view/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -49,7 +49,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">登录用户<<?php echo  $user_id;?>></a>
+            <a class="navbar-brand" href="/">登录用户<<?php echo  $userModel->user_id;?>></a>
         </div>
         <!-- /.navbar-header -->
 
@@ -107,23 +107,27 @@
         </div>
         <!-- /.row -->
         <div class="row">
+            <?php foreach($hotbookModels as $hotbookModel){ ?>
             <div class="col-sm-6 col-md-2">
-                <div class="row">
-                    <div class="col-md-12">
+                <div class="row" style="border:0px solid white;margin-bottom: 15px">
+                    <div class="col-md-12" style="border:1px solid white">
                         <a href="#" class="thumbnail">
                             <img src="view/static/pic/kittens.jpg"
                                  alt="通用的占位符缩略图">
                         </a>
                     </div>
-                    <div class="col-md-12">
-                        <span style="margin-left: 10px;">我爱着我的世界</span>
+                    <div class="col-md-12" style="border:0px solid white;height: 30px;margin-top: -20px">
+                        <span style="margin-left: 10px;"><?php echo $hotbookModel->book_id;?></span>
                     </div>
-                    <div class="col-md-8">
-                        <a>作者:</a><span>zuston</span>
+                    <div class="col-md-8" style="border:0px solid white;height: 25px;margin-top:-5px;">
+                        <p class="text-danger" style="margin-left: 10px;">作者:</p><span><?php echo $hotbookModel->book_name;?></span>
                     </div>
-                    <div class="col-md-4"><a>借阅</a></div>
+                    <div class="col-md-4" style="margin-top: -5px;">
+                        <button type="button" class="btn <?php $flag=rand(0,1);echo $flag?'btn-success':'btn-info';?> btn-xs" style="float: right;"><?php echo $flag?'有存量':'无剩余';?></button>
+                    </div>
                 </div>
             </div>
+            <?php }?>
         </div>
     </div>
 
