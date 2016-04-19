@@ -110,21 +110,23 @@
             <?php foreach($hotbookModels as $hotbookModel){ ?>
             <div class="col-sm-6 col-md-2">
                 <div class="row" style="border:0px solid white;margin-bottom: 15px">
-                    <div class="col-md-12" style="border:1px solid white">
-                        <a href="#" class="thumbnail">
-                            <img src="view/static/pic/kittens.jpg"
-                                 alt="通用的占位符缩略图">
-                        </a>
+                    <div class="col-md-5" style="border: 0px solid black">
+                        <img src="view/static/pic/a.jpg" class="img-rounded" alt="Cinque Terre" width="112" height="147">
                     </div>
-                    <div class="col-md-12" style="border:0px solid white;height: 30px;margin-top: -20px">
-                        <span style="margin-left: 10px;"><?php echo $hotbookModel->belong_to->book_name;?></span>
+                    <div class="col-md-7" style="border: 0px solid black">
+                        <h5><a class="text-info"><?php echo $hotbookModel->belong_to->book_name;?></a></h5>
+                        <h6><small>作者:</small><a class="text-success"><?php echo $hotbookModel->belong_to->book_author;?></a></h6>
+                        <h6><small>心理/学术/数学</small></h6>
                     </div>
-                    <div class="col-md-8" style="border:0px solid white;height: 25px;margin-top:-5px;">
-                        <p class="text-danger" style="margin-left: 10px;">作者:</p><span><?php echo $hotbookModel->belong_to->book_author;?></span>
-                    </div>
-                    <div class="col-md-4" style="margin-top: -5px;">
-                        <button type="button" class="btn <?php $flag=rand(0,1);echo $flag?'btn-success':'btn-info';?> btn-xs" style="float: right;"><?php echo $flag?'有存量':'无剩余';?></button>
-                    </div>
+
+
+
+<!--                    <div class="col-md-8" style="border:0px solid white;height: 25px;margin-top:-5px;">-->
+<!--                        <p class="text-danger" style="margin-left: 10px;">作者:</p><span>--><?php //echo $hotbookModel->belong_to->book_author;?><!--</span>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-4" style="margin-top: -5px;">-->
+<!--                        <button type="button" class="btn --><?php //$flag=rand(0,1);echo $flag?'btn-success':'btn-info';?><!-- btn-xs" style="float: right;">--><?php //echo $flag?'有存量':'无剩余';?><!--</button>-->
+<!--                    </div>-->
                 </div>
             </div>
             <?php }?>

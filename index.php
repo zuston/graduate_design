@@ -23,7 +23,7 @@ require './service/loginService.php';
 require './service/accountingService.php';
 //require_once './core/AutoLoad.php';
 
-ActiveRecord::setDb(new PDO("mysql:host=localhost;dbname=bookManage",
+ActiveRecord::setDb(new PDO("mysql:host=115.159.149.23;dbname=bookManage",
     "root",
     "shacha",
     array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8';")
@@ -75,7 +75,10 @@ Flight::route('/hotbook',function(){
 Flight::route('/returnbook',function(){
     $user_id = Core::getSessionId();
     $userModel = userService::getUserModelByPk($user_id);
-    Core::render('returnbook',$userModel);
+    $unreturnModels = userService::getUnreturnBooks($user_id);
+    $rendingModels = userService::getRendingBooks($user_id);
+    $rentModels = userService::getRentBooks($user_id);
+    Core::render('returnbook',array('userModel'=>$userModel,'unreturnModels'=>$unreturnModels,'rendingModels'=>$rendingModels,'rentModels'=>$rentModels));
 });
 
 Flight::route('/rankbook',function(){
@@ -91,6 +94,9 @@ Flight::route('/userbookcount',function(){
     $user_id = Core::getSessionId();
     $userModel = userService::getUserModelByPk($user_id);
     Core::render('userbookcount',$userModel);
+});
+Flight::route('/search',function(){
+    Core::render('search');
 });
 
 
