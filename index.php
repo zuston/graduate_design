@@ -1,5 +1,6 @@
 <?php
 session_start();
+header('Content-Type: text/html; charset=utf-8');
 require './extension/xunsearch/lib/XS.php';
 require './extension/Flight/flight/Flight.php';
 require './extension/ActiveRecord/ActiveRecord.php';
@@ -22,7 +23,12 @@ require './service/loginService.php';
 require './service/accountingService.php';
 //require_once './core/AutoLoad.php';
 
-ActiveRecord::setDb(new PDO("mysql:host=115.159.149.23;dbname=bookManage","root","shacha"));
+ActiveRecord::setDb(new PDO("mysql:host=localhost;dbname=bookManage",
+    "root",
+    "shacha",
+    array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8';")
+    )
+);
 
 Flight::route('/',function(){
     if(Core::getSessionState()){
@@ -59,7 +65,6 @@ Flight::route('/main',function(){
 });
 
 Flight::route('/hotbook',function(){
-    header('Content-Type: text/html; charset=utf-8');
     $user_id = Core::getSessionId();
     $userModel = userService::getUserModelByPk($user_id);
     $hotbooks = new userBookRelationModel();

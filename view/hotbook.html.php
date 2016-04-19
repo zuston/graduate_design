@@ -19,7 +19,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?php echo $userModel->user_id;?>的图书借阅</title>
+    <title>[<?php echo $userModel->user_name;?>]图书借阅</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="view/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -49,7 +49,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">登录用户<<?php echo  $userModel->user_id;?>></a>
+            <a class="navbar-brand" href="/">登录用户<<?php echo  $userModel->user_name;?>></a>
         </div>
         <!-- /.navbar-header -->
 
@@ -117,10 +117,10 @@
                         </a>
                     </div>
                     <div class="col-md-12" style="border:0px solid white;height: 30px;margin-top: -20px">
-                        <span style="margin-left: 10px;"><?php echo $hotbookModel->book_id;?></span>
+                        <span style="margin-left: 10px;"><?php echo $hotbookModel->belong_to->book_name;?></span>
                     </div>
                     <div class="col-md-8" style="border:0px solid white;height: 25px;margin-top:-5px;">
-                        <p class="text-danger" style="margin-left: 10px;">作者:</p><span><?php echo $hotbookModel->book_name;?></span>
+                        <p class="text-danger" style="margin-left: 10px;">作者:</p><span><?php echo $hotbookModel->belong_to->book_author;?></span>
                     </div>
                     <div class="col-md-4" style="margin-top: -5px;">
                         <button type="button" class="btn <?php $flag=rand(0,1);echo $flag?'btn-success':'btn-info';?> btn-xs" style="float: right;"><?php echo $flag?'有存量':'无剩余';?></button>

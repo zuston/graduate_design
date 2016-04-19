@@ -19,7 +19,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?= $user_id?>的图书借阅</title>
+    <title><?php echo  $user_name;?>的图书借阅</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="view/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -49,7 +49,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">登录用户<<?php echo  $user_id;?>></a>
+            <a class="navbar-brand" href="/">登录用户<<?php echo  $user_name;?>></a>
         </div>
         <!-- /.navbar-header -->
 

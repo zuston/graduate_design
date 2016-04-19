@@ -115,8 +115,11 @@ abstract class ActiveRecord extends Base {
      * @param PDO $db
      */
     public static function setDb($db) {
+       // header('Content-Type: text/html; charset=utf-8');
         self::$db = $db;
-        self::$db -> exec("SET NAMES utf8");
+        //$a = self::$db->query('select * from user where user_id =1 ');
+        //$res = $a -> fetch();
+        //var_dump($res);exit;
     }
     /**
      * function to find one record and assign in to current object.
