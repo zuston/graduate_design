@@ -175,7 +175,55 @@ $totalMoney = 0;
                                     <td><?php echo $rendingModel->belong_to->book_name;?></td>
                                     <td><?php echo $rendingModel->ubr_create_at;?></td>
                                     <td><?php echo $rendingModel->ubr_due_at;?></td>
-                                    <td><button class="btn btn-outline btn-success btn-xs" type="button">续借登记</button></td>
+                                    <td>
+                                        <?php if($rendingModel->ubr_absorted==1){?>
+                                        <button class="btn btn-outline btn-success btn-xs" type="button" data-toggle="modal" data-target="#myModal">续借登记</button>
+                                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                            <h4 class="modal-title" id="myModalLabel">延期申请</h4>
+                                                        </div>
+                                                        <?php $flag = ((strtotime($rendingModel->ubr_due_at)-strtotime('now')-3*86400)<0)?true:false;if($flag){?>
+                                                            <div class="modal-body">
+                                                                <p>借于:</p><p class="text-info"><?php echo $rendingModel->ubr_create_at;?></p>
+                                                                <p>应还于:</p><p class="text-info"><?php echo $rendingModel->ubr_due_at;?></p>
+                                                                <p>
+                                                                    <label>延长借阅时间:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="optionsRadiosInline" id="<?php echo $rendingModel->ubr_id;?>" value="1" checked>一周
+                                                                    </label>
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="optionsRadiosInline" id="<?php echo $rendingModel->ubr_id;?>" value="2">二周
+                                                                    </label>
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="optionsRadiosInline" id="<?php echo $rendingModel->ubr_id;?>" value="3">一个月
+                                                                    </label>
+                                                                </p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn btn-primary" id="addReturnTime">申请提交</button>
+                                                            </div>
+                                                        <?php }else{?>
+                                                            <div class="modal-body">
+                                                                <p>请在到期前三天进行延期申请</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        <?php }?>
+                                                    </div>
+                                                    <!-- /.modal-content -->
+                                                </div>
+                                                <!-- /.modal-dialog -->
+                                            </div>
+                                        <?php }?>
+                                        <?php if($rendingModel->ubr_absorted!=1){?>
+                                            <button class="btn btn-outline btn-danger btn-xs" type="button" disabled>续借过<?php echo ($rendingModel->ubr_absorted-1);?>次</button>
+                                        <?php }?>
+                                    </td>
                                 </tr>
                             <?php }?>
 
@@ -257,6 +305,15 @@ $totalMoney = 0;
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
             responsive: true
+        });
+
+        $('#addReturnTime').click(function(){
+            var time = $('input:radio[name="optionsRadiosInline"]:checked').val();
+            var ubr_id = $('input:radio[name="optionsRadiosInline"]:checked').attr('id');
+            $.post("/modify/updateReturnBook", {time:time,ubr_id:ubr_id},
+                function(data){
+                    alert(data);
+                });
         });
     });
 </script>

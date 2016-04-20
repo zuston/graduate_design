@@ -24,7 +24,7 @@ require './service/loginService.php';
 require './service/accountingService.php';
 //require_once './core/AutoLoad.php';
 
-ActiveRecord::setDb(new PDO("mysql:host=localhost;dbname=bookManage",
+ActiveRecord::setDb(new PDO("mysql:host=115.159.149.23;dbname=bookManage",
     "root",
     "shacha",
     array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8';")
@@ -66,6 +66,9 @@ Flight::route('/main',function(){
 });
 
 Flight::route('/hotbook',function(){
+    if(!Core::getSessionState()){
+        Flight::redirect('/login/user');
+    }
     $user_id = Core::getSessionId();
     $userModel = userService::getUserModelByPk($user_id);
     $hotbooks = new userBookRelationModel();
@@ -74,6 +77,9 @@ Flight::route('/hotbook',function(){
 });
 
 Flight::route('/returnbook',function(){
+    if(!Core::getSessionState()){
+        Flight::redirect('/login/user');
+    }
     $user_id = Core::getSessionId();
     $userModel = userService::getUserModelByPk($user_id);
     $unreturnModels = userService::getUnreturnBooks($user_id);
@@ -83,6 +89,9 @@ Flight::route('/returnbook',function(){
 });
 
 Flight::route('/rankbook',function(){
+    if(!Core::getSessionState()){
+        Flight::redirect('/login/user');
+    }
     $user_id = Core::getSessionId();
     $userModel = userService::getUserModelByPk($user_id);
     for($i=0;$i<6;$i++){
@@ -100,6 +109,35 @@ Flight::route('/search',function(){
     Core::render('search');
 });
 
+//============================================================================
+//以下为action动作
+
+
+Flight::route('/modify/userInfo',function(){
+    if(!Core::getSessionState()){
+        Flight::redirect('/login/user');
+    }
+    $userModel = userService::getUserModelByPk(Core::getSessionId());
+    $user_email = Core::r('user_email');
+    $user_password = Core::r('user_password');
+    $res = userService::updateUserInfo((int)Core::getSessionId(),$user_email,$user_password);
+    if($res){
+        Core::logoutSession();
+    }
+    Flight::redirect('/login/user');
+});
+
+
+
+Flight::route('/modify/updateReturnBook',function(){
+    if(!Core::getSessionState()){
+        Flight::redirect('/login/user');
+    }
+    $timeReq = (int)Core::r('time');
+    $ubr_id = (int)Core::r('ubr_id');
+    $res = userService::updateReturnBookTime($ubr_id,$timeReq);
+    echo $res;
+});
 
 
 

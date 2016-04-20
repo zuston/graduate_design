@@ -134,7 +134,7 @@ $user_academy_map = array(
                 <span class="glyphicon glyphicon-th-large"> 本科 </span>
             </div>
             <div class="col-md-6">
-                <form role="form">
+                <form role="form" action="/modify/userInfo" method="post">
                     <div class="form-group">
                         <label>姓名</label>
                         <input class="form-control" disabled="" value="<?php echo $user_name;?>">
@@ -146,13 +146,13 @@ $user_academy_map = array(
                     </div>
                     <div class="form-group has-success">
                         <label>邮箱</label>
-                        <input class="form-control" value="<?php echo $user_email;?>">
-                        <p class="help-block">Example block-level help text here.</p>
+                        <input class="form-control" value="<?php echo $user_email;?>" name="user_email">
+                        <p class="help-block">更改邮箱之后需要重新登录</p>
                     </div>
                     <div class="form-group has-error">
                         <label>密码</label>
-                        <input class="form-control" value="<?php echo $user_password;?>">
-                        <p class="help-block">Example block-level help text here.</p>
+                        <input class="form-control" value="<?php echo $user_password;?>" name="user_password">
+                        <p class="help-block">更改密码之后需要重新登录</p>
                     </div>
                     <div class="form-group">
                         <label>班级</label>
@@ -161,13 +161,13 @@ $user_academy_map = array(
                     </div>
                     <div class="form-group">
                         <label>学历</label>
-                        <input class="form-control" disabled="" value="<?php echo $user_name;?>">
+                        <input class="form-control" disabled="" value="<?php echo $user_type?'本科':'null';?>">
                         <p class="help-block">Example block-level help text here.</p>
                     </div>
 
                     <div class="form-group">
-                        <label>专业</label>
-                        <input class="form-control" placeholder="Enter text" disabled="">
+                        <label>专业代码</label>
+                        <input class="form-control" placeholder="Enter text" disabled="" value="<?php echo $user_major?>">
                     </div>
                     <div class="form-group">
                         <label>年级</label>

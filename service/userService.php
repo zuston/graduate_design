@@ -49,8 +49,44 @@ class userService
 
     public static function getRendingBooks($user_id){
         $userModel = new userBookRelationModel();
-        $relations = $userModel->where('user_id = '.$user_id.' and ubr_absorted=1 and ubr_due_at>'.'"'.date('Y-m-d H:i:s').'"')->findAll();
+        $relations = $userModel->where('user_id = '.$user_id.' and ubr_absorted in(1,2) and ubr_due_at>'.'"'.date('Y-m-d H:i:s').'"')->findAll();
         return $relations;
     }
 
+
+    public static function updateUserInfo($user_id,$user_email,$user_password){
+        $userModel = new userModel();
+        $user = $userModel -> eq('user_id',$user_id)->find();
+        $user -> user_email = $user_email;
+        $user -> user_password = $user_password;
+        $res = $user -> update();
+        if(is_object($res)){
+            return true;
+        }
+        return false;
+    }
+
+
+    public static function updateReturnBookTime($ubr_id,$timeReq){
+        $addTime = 0;
+        switch($timeReq){
+            case 1:
+                $addTime = 7;
+                break;
+            case 2:
+                $addTime = 14;
+                break;
+            case 3:
+                $addTime = 30;
+        }
+        $ubrModels = new userBookRelationModel();
+        $ubrModel = $ubrModels -> eq('ubr_id',$ubr_id) -> find();
+        $due_at = $ubrModel->ubr_due_at;
+        $ubrModel -> ubr_due_at = date('Y-m-d H:i:s',strtotime($due_at)+$addTime*86400);
+        $res = $ubrModel->update();
+        if(is_object($res)){
+            return true;
+        }
+        return false;
+    }
 }
