@@ -25,7 +25,7 @@ require './service/accountingService.php';
 //require_once './core/AutoLoad.php';
 
 Flight::route('/get',function(){
-
+    file_put_contents('date.txt', $_REQUEST);
 });
 ActiveRecord::setDb(new PDO("mysql:host=localhost;dbname=bookManage",
     "root",
