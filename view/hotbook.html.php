@@ -72,6 +72,7 @@
                         </div>
                         <!-- /input-group -->
                     </li>
+                    <li id='notify_li'><a>提示信息</a></li>
                     <li>
                         <a href="/hotbook"><i class="fa fa-dashboard fa-fw"></i>热门书籍</a>
                     </li>
@@ -168,6 +169,7 @@
             var value = $('#searchInput').val();
             
         });
+        $('#notify_li').hide();
     });
 </script>
 

@@ -24,6 +24,9 @@ require './service/loginService.php';
 require './service/accountingService.php';
 //require_once './core/AutoLoad.php';
 
+Flight::route('/get',function(){
+
+});
 ActiveRecord::setDb(new PDO("mysql:host=localhost;dbname=bookManage",
     "root",
     "shacha",
