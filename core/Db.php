@@ -12,7 +12,7 @@ class Db
     public static function getInstance()
     {
         if(self::$db==null){
-            self::$db = new PDO("mysql:host=115.159.149.23;dbname=bookManage;charset=utf8","root","shacha",
+            self::$db = new PDO("mysql:host=localhost;dbname=bookManage;charset=utf8","root","shacha",
             array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8';"));
         }
         return self::$db;

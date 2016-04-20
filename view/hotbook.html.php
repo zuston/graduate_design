@@ -27,6 +27,8 @@
 
     <!-- DataTables CSS -->
     <link href="view/static/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="view/static/css/fakeLoader.css" rel="stylesheet">
+    <link href="view/static/css/pace-theme-minimal.css" rel="stylesheet">
 
 
     <!-- Custom CSS -->
@@ -110,10 +112,10 @@
             <?php foreach($hotbookModels as $hotbookModel){ ?>
             <div class="col-sm-6 col-md-2">
                 <div class="row" style="border:0px solid white;margin-bottom: 15px">
-                    <div class="col-md-5" style="border: 0px solid black">
-                        <img src="view/static/pic/a.jpg" class="img-rounded" alt="Cinque Terre" width="112" height="147">
+                    <div id='fakeLoder' class="col-md-6" style="border: 0px solid black">
+                        <img src="https://img1.doubanio.com/lpic/s10<?php echo rand(10000,99999);?>.jpg" class="img-rounded" alt="Cinque Terre" width="112" height="147">
                     </div>
-                    <div class="col-md-7" style="border: 0px solid black">
+                    <div class="col-md-6" style="border: 0px solid black;margin-left:0px;">
                         <h5><a class="text-info"><?php echo $hotbookModel->belong_to->book_name;?></a></h5>
                         <h6><small>作者:</small><a class="text-success"><?php echo $hotbookModel->belong_to->book_author;?></a></h6>
                         <h6><small>心理/学术/数学</small></h6>
@@ -149,6 +151,9 @@
 <script src="view/static/js/jquery.dataTables.min.js"></script>
 <script src="view/static/js/dataTables.bootstrap.min.js"></script>
 <script src="view/static/js/dataTables.responsive.js"></script>
+<script src="view/static/js/fakeLoader.min.js"></script>
+<script src="view/static/js/pace.min.js"></script>
+
 
 <!-- Custom Theme JavaScript -->
 <script src="view/static/js/sb-admin-2.js"></script>

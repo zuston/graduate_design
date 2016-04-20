@@ -24,7 +24,7 @@ require './service/loginService.php';
 require './service/accountingService.php';
 //require_once './core/AutoLoad.php';
 
-ActiveRecord::setDb(new PDO("mysql:host=115.159.149.23;dbname=bookManage",
+ActiveRecord::setDb(new PDO("mysql:host=localhost;dbname=bookManage",
     "root",
     "shacha",
     array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8';")
