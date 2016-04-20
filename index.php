@@ -1,4 +1,60 @@
 <?php
+
+$params = [
+            'notify_type'   => @$_REQUEST['notify_type'],
+            'notify_id'     => @$_REQUEST['notify_id'],
+            '_input_charset'=> @$_REQUEST['_input_charset'],
+            'notify_time'   => @$_REQUEST['notify_time'],
+            'sign'          => @$_REQUEST['sign'],
+            'sign_type'     => @$_REQUEST['sign_type'],
+            'version'       => @$_REQUEST['version'],
+            'memo'          => @$_REQUEST['memo'],
+            'error_code'    => @$_REQUEST['error_code'],
+            'error_message' => @$_REQUEST['error_message'],
+            'out_trade_no'  => @$_REQUEST['out_trade_no'],
+            'trade_amount'  => @$_REQUEST['trade_amount'],
+            'inner_trade_no'=> @$_REQUEST['inner_trade_no'],
+            'fee'           => @$_REQUEST['fee'],
+            'gmt_create'    => @$_REQUEST['gmt_create'],
+            'gmt_payment'   => @$_REQUEST['gmt_payment'],
+            'gmt_close'     => @$_REQUEST['gmt_close'],
+            'trade_status'  => @$_REQUEST['trade_status'],
+        ];
+$res = checkSignMsg($params);
+function checkSignMsg($pay_params = array()) {
+        $params_str = "";
+        $signMsg = "";
+        $return = false;
+        ksort($pay_params);
+        foreach ( $pay_params as $key => $val ) {
+            if ($key != "sign" && $key != "sign_type" && $key != "sign_version" && ! is_null ($val) && @$val != "") {
+                $params_str .= "&" . $key . "=" . $val;
+            }
+        }
+        if ($params_str){
+            $params_str = substr ($params_str, 1 );
+        }
+
+//        $cert = file_get_contents ( sinapay_rsa_sign_public_key );
+        $public_key_path='rsa_sign_public.pem';
+        if(file_get_contents($public_key_path)){
+            $pubkeyid = openssl_pkey_get_public (file_get_contents($public_key_path));
+            $ok = openssl_verify ( $params_str, base64_decode ( $pay_params ['sign'] ), file_get_contents($public_key_path), OPENSSL_ALGO_SHA1 );
+            $return = ($ok == 1)?true : false;
+            openssl_free_key ( $pubkeyid );
+
+            return $return;
+        }
+        return false;
+
+    }
+
+file_put_contents('date.txt', $res);exit;
+
+
+
+
+
 session_start();
 header('Content-Type: text/html; charset=utf-8');
 date_default_timezone_set('Asia/Shanghai');
@@ -24,9 +80,6 @@ require './service/loginService.php';
 require './service/accountingService.php';
 //require_once './core/AutoLoad.php';
 
-Flight::route('/get',function(){
-    file_put_contents('date.txt', $_REQUEST);
-});
 ActiveRecord::setDb(new PDO("mysql:host=localhost;dbname=bookManage",
     "root",
     "shacha",
