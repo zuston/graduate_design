@@ -312,7 +312,7 @@ $totalMoney = 0;
             var ubr_id = $('input:radio[name="optionsRadiosInline"]:checked').attr('id');
             $.post("/modify/updateReturnBook", {time:time,ubr_id:ubr_id},
                 function(data){
-                    alert(data);
+                      location.reload();
                 });
         });
     });
